@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/balance', [\App\Http\Controllers\BankController::class, 'myBalance']);
+Route::get('/credit-card', [\App\Http\Controllers\BankController::class, 'creditCardTransactions']);
+Route::get('/investiments', [\App\Http\Controllers\BankController::class, 'investiments']);
+Route::get('/checking-account', [\App\Http\Controllers\BankController::class, 'checkingAccount']);
+
 require __DIR__.'/auth.php';
